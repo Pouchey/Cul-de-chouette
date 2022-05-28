@@ -9,11 +9,24 @@ class Player {
     this.id = uuidv4();
     this.socket = socketID;
     this.name = name;
+    this.avatar = avatar;
     this.score = score;
     this.grelotine = false;
-    this.avatar = avatar;
+    this.civet = false;
   }
 
+  getPlayer(){
+    return {
+      id: this.id,
+      connectd: this.socket !== null,
+      name: this.name,
+      avatar: this.avatar,
+      score: this.score,
+      grelotine: this.grelotine,
+      civet: this.civet,
+    }
+  }
+  
   getId() {
     return this.id;
   }
@@ -48,6 +61,14 @@ class Player {
 
   setGrelotine(grelotine) {
     this.grelotine = grelotine;
+  }
+  
+  getCivet() {
+    return this.civet;
+  }
+
+  setCivet(civet) {
+    this.civet = civet;
   }
 
   getAvatar() {

@@ -1,0 +1,13 @@
+
+.help {
+  top: 3%;
+  right: 3%;
+  position: fixed;
+  animation: fadeIn 1s ease-in-out;
+}
+.help svg{
+  color: var(--primary-color);
+  align-self: center;
+  font-size: 2.5em;
+  cursor: pointer;
+}

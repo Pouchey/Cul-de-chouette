@@ -1,0 +1,23 @@
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) var(--primary-dark-color);
+  transition: scrollbar-color 0.3s ease-out;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary-dark-color);
+  border-radius: 100px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  box-shadow: inset 2px 2px 5px 0 rgba(#ccc, 0.5);
+  border-radius: 100px;
+}
+

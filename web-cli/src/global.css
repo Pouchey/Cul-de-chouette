@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'papyrusregular';
+  src: url('./style/font/papyrus-webfont.woff2') format('woff2'),
+       url('./style/font/papyrus-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+:root {
+  --primary-color : white;
+  --secondary-color : orange;
+  --primary-dark-color : black;
+  --primary-gradient : linear-gradient(45deg, rgba(70,40,10,1) 0%, rgba(255,180,40,1) 100%); 
+  --light-gradient: linear-gradient(180deg, rgba(255,183,67,1) 0%, rgba(252,234,176,1) 100%);
+
+  --primary-dark-transparent : rgba(0,0,0,0.75);
+  --secondary-dark-transparent : rgba(0,0,0,0.5);
+
+  --custom-border: 3px rgba(29,29,27,.55) solid ; 
+  --custom-border-radius: 2em;
+  --custom-box-shadow : inset 0px 2px 0px 0px rgb(255 255 255 / 15%), 0px 3px 0px 0px rgb(255 255 255 / 15%);
+  
+  --primary-button: #12d8fa;
+  --primary-button-sb: #1fa2ff;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: 'papyrusregular';
+  vertical-align: baseline;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+main{
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+

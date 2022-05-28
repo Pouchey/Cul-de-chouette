@@ -4,10 +4,9 @@
 // --------------------------------------------------------------
 const Party = require('./Party');
 const Player = require('./Player');
-const Dices = require('./Dices');
 
-var parties = [];
 
+var parties = require('./parties');
 
 function initGame(socketID,newPlayer) {
 
@@ -72,17 +71,8 @@ function getPlayers(partyID) {
   const party = getParty(partyID);
   const players = party.getPlayers();
   // We send back players without socket id
-  const playersInfos = players.map(p => {
-    return {
-      id: p.getId(),
-      connectd: p.getSocket() !== null,
-      name: p.getName(),
-      score: p.getScore(),
-      grelotine: p.getGrelotine(),
-      avatar: p.getAvatar()
-    }
-  }
-  );
+  const playersInfos = players.map(p => p.getPlayer());
+
   return playersInfos;
 }
 
