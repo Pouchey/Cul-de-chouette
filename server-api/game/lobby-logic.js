@@ -58,12 +58,16 @@ function removePlayer(partyID,playerID) {
 
 function findPartyBySocket(socketID) {
   let ret = parties.find(p => p.getPlayers().find(p => p.getSocket() === socketID));
+  if(!ret)
+   return null;
   return ret.getId();
 }
 
 function findPlayerBySocket(partyID,socketID) {
   const party = getParty(partyID);
   const player = party.getPlayers().find(p => p.getSocket() === socketID);
+  if(!player)
+    return null;
   return player.getId();
 }
 

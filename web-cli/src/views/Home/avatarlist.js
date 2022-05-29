@@ -1,0 +1,44 @@
+const list = [
+  {
+    name:'arthur',
+    image:'/images/avatars/arthur.png'
+  },
+  {
+    name:'bohort',
+    image:'/images/avatars/bohort.png'
+  },
+  {
+    name:'caius',
+    image:'/images/avatars/caius.png'
+  },
+  {
+    name:'dame_seli',
+    image:'/images/avatars/dame_seli.png'
+  },
+  {
+    name:'geunievre',
+    image:'/images/avatars/geunievre.png'
+  },
+  {
+    name:'guethenoc',
+    image:'/images/avatars/guethenoc.png'
+  },
+  {
+    name:'lancelot',
+    image:'/images/avatars/lancelot.png'
+  },
+  {
+    name:'leodagan',
+    image:'/images/avatars/leodagan.png'
+  },
+  {
+    name:'perceval',
+    image:'/images/avatars/perceval.png'
+  },
+  {
+    name:'venec',
+    image:'/images/avatars/venec.png'
+  }
+]
+
+export default list

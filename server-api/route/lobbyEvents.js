@@ -24,12 +24,23 @@ module.exports = (io) => {
     const socket = this;
     // Check if a party with the given ID exists
     let party;
-    try{
-      party = getParty(partyID);
+    if(partyID){
+      try{
+        party = getParty(partyID);
+      }
+      catch(e){
+        //nothing to do
+      }
     }
-    catch(e){
-      //nothing to do
+    else{
+      try{
+        party = findPartyBySocket(socket.id);
+      }
+      catch(e){
+        //nothing to do
+      }
     }
+    
 
     if(party){
       if(getLaunched(partyID)){
@@ -103,15 +114,23 @@ module.exports = (io) => {
 
   const leaveGame = function() {
     const socket = this;
-    const partyID = findPartyBySocket(socket.id);
-    const playerID = findPlayerBySocket(partyID,socket.id);
+    let partyID;
+    let playerID;
+    try{
+      partyID = findPartyBySocket(socket.id);
+      playerID = findPlayerBySocket(partyID,socket.id);
+    }
+    catch(e){
+      //nothing to do
+    }
+
 
     if(partyID){
       // Remove the player from the party
       removePlayer(partyID,playerID);
       // Send back the players infos
       io.sockets.in(partyID).emit('playersUpdate',getPlayers(partyID));
-      
+
     }
     console.log('Player disconnected');
   }

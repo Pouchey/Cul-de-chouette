@@ -1,18 +1,43 @@
 import React from 'react'
-
 import '../style/views/Home.css'
+import AvatarSelector from './Home/AvatarSelector'
+import { useNavigate } from 'react-router-dom'
 
-import AvatarSelector from './AvatarSelector'
+import { playerContext } from '../App'
+import socket from '../socket-connection'
 
 function Home() {
 
+  const { setPlayer } = React.useContext(playerContext)
 
   const [username, setUsername] = React.useState('')
+  const [avatar,setAvatar] = React.useState('')
+
+  const navigate = useNavigate();
 
   const joinGame = (e) =>{
     e.preventDefault()
-    // alert(`Welcome to the game ${username}!`)
+    
+    const p = {
+      username,
+      avatar
+    }
+
+    socket.emit('joinGame',{p},(error) =>{
+      if(error){
+        alert(error)
+      }
+    })
+
   } 
+
+  React.useEffect(() => {
+    socket.on('joinGame',(data) =>{
+      setPlayer({playerID:data.playerID,partyID:data.partyID})
+      navigate('/lobby/' + data.partyID)
+    })
+  },[navigate,setPlayer])
+
 
 
   return (
@@ -22,7 +47,7 @@ function Home() {
           alt="Logo"
           className="logo"
       />
-      <AvatarSelector/>
+      <AvatarSelector setAvatar={setAvatar}/>
       <form onSubmit={joinGame}>
         <label htmlFor="username">Choisi ton pseudo:</label>
         <input 

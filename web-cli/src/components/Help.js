@@ -2,11 +2,12 @@ import React from 'react'
 
 import './help.css'
 
-function Help() {
+function Help({handleHelp}) {
+  
   return (
-    <div className='help'>
+    <button className='help' onClick={handleHelp}>
       <i className="fa-regular fa-circle-question"></i>
-    </div>
+    </button>
   )
 }
 

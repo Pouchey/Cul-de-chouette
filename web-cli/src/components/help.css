@@ -1,13 +1,17 @@
 
 .help {
+  all:initial;
   top: 3%;
   right: 3%;
   position: fixed;
   animation: fadeIn 1s ease-in-out;
+  z-index: 1;
 }
 .help svg{
   color: var(--primary-color);
   align-self: center;
   font-size: 2.5em;
   cursor: pointer;
+  animation: rotate 10s ease-in-out infinite;
+  animation-delay: 5s;
 }
