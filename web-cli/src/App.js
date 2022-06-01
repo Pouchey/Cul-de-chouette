@@ -36,7 +36,7 @@ function App() {
       <main style={toggleHelp ? {filter: 'blur(10px)',overflow:'hidden'} : {filter:'none'}}>
       <Help handleHelp={handleHelp}/>
         <Outlet/>
-        <Background/>
+        {!toggleHelp && <Background/>}
       </main>
       {toggleHelp && <HelpPopup/>}
       </playerContext.Provider>
