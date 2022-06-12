@@ -1,11 +1,13 @@
+
 .popup-container{
+  z-index: 10;
   position: fixed;
-  top: 10%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
-  background-color: var(--primary-dark-color);
-  border-radius: 0.5em;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  background-color: var(--primary-light-transparent);
+  border-radius: var(--custom-border-radius);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,4 +16,12 @@
 }
 
 
+.hidden{
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
 
+.active{
+  opacity: 1 !important;
+  visibility: visible !important;
+}

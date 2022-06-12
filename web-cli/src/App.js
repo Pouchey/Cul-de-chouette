@@ -6,7 +6,6 @@ import Lobby from './views/Lobby'
 
 
 import Help from './components/Help'
-import HelpPopup from './components/HelpPopup'
 import Background from './components/Background';
 
 import './style/global/scroll-bar.css'
@@ -23,22 +22,15 @@ function App() {
     partyID:''
   });
 
-  const [toggleHelp, setToggleHelp] = React.useState(false);
-
-  const handleHelp = () =>{
-    setToggleHelp(!toggleHelp);
-  }
 
   const Main = () => {
     return (
       <playerContext.Provider value={{player, setPlayer}}>
-
-      <main style={toggleHelp ? {filter: 'blur(10px)',overflow:'hidden'} : {filter:'none'}}>
-      <Help handleHelp={handleHelp}/>
+      <Help/>
+      <main id='main'>
         <Outlet/>
-        {!toggleHelp && <Background/>}
       </main>
-      {toggleHelp && <HelpPopup/>}
+      <Background/>
       </playerContext.Provider>
     )
   }

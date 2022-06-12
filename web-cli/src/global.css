@@ -16,6 +16,7 @@
 
   --primary-dark-transparent : rgba(0,0,0,0.75);
   --secondary-dark-transparent : rgba(0,0,0,0.5);
+  --primary-light-transparent : rgba(255,255,255,0.75);
 
   --custom-border: 3px rgba(29,29,27,.55) solid ; 
   --custom-border-radius: 2em;
@@ -59,3 +60,6 @@ main{
 }
 
 
+#main{
+  transition: all 0.5s;
+}
