@@ -2,26 +2,21 @@
 .popup-container{
   z-index: 10;
   position: fixed;
-  top: 15%;
-  left: 15%;
-  width: 70%;
-  height: 70%;
-  background-color: var(--primary-light-transparent);
-  border-radius: var(--custom-border-radius);
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2);
+  justify-content: center;
 }
 
 
-.hidden{
+.popup-hidden{
   opacity: 0 !important;
   visibility: hidden !important;
 }
 
-.active{
+.popup-active{
   opacity: 1 !important;
   visibility: visible !important;
 }

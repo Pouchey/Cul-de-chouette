@@ -87,4 +87,5 @@
 .home-container form button{
   background:var(--primary-button);
   --box-shadow-color: var(--primary-button-sb);
+  color:white;
 }

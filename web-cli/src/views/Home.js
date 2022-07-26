@@ -1,6 +1,6 @@
 import React from 'react'
 import '../style/views/Home.css'
-import AvatarSelector from './Home/AvatarSelector'
+import AvatarSelector from '../components/Home/AvatarSelector'
 import { useNavigate } from 'react-router-dom'
 
 import { playerContext } from '../App'
@@ -60,7 +60,9 @@ function Home() {
           value={username}
           onChange={(e)=>setUsername(e.currentTarget.value)}
         />
-        <button type="submit">Join</button>
+        <button type="submit" >  
+          Rejoindre 
+        </button>
       </form>
     </div>
   )

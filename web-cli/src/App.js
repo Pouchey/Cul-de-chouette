@@ -5,8 +5,8 @@ import Home from './views/Home'
 import Lobby from './views/Lobby'
 
 
-import Help from './components/Help'
-import Background from './components/Background';
+import Help from './components/App/Help'
+import Background from './components/App/Background';
 
 import './style/global/scroll-bar.css'
 import './style/global/buttons.css'

@@ -1,4 +1,5 @@
 import React from 'react'
+import Carousel from '../utils/Carousel';
 
 import './helpPopup.css'
 
@@ -15,8 +16,8 @@ function HelpPopup({isOpen}) {
 
   return (
     
-    <div className={isOpen ? 'popup-container active' : 'popup-container hidden'}>
-      <h1>Help popup</h1>
+    <div className={isOpen ? 'popup-container popup-active' : 'popup-container popup-hidden'}>
+      <Carousel paused={isOpen ? true : false}/>
     </div>
   )
 }
